@@ -4,6 +4,7 @@ import React from 'react';
 // Zadání 2: Po kliknutí na tlačítko vypiš do konzole „Uživatel chce koupit DOPLŇ_NÁZEV_POLOŽKY“.
 
 export const NakupniPolozka = ({ nazev }) => {
+  //nazev vytažen destrukturalizací
   return (
     <div>
       {nazev}{' '}
@@ -25,12 +26,9 @@ export const Uloha5 = () => {
 
   return (
     <>
-      {polozky.map(
-        (polozka) => (
-          (<NakupniPolozka nazev={polozka} key={polozka} />),
-          (<NakupniPolozka nazev={polozka} key={polozka} />)
-        ),
-      )}{' '}
+      {polozky.map((polozka) => (
+        <NakupniPolozka nazev={polozka} key={polozka} />
+      ))}{' '}
     </>
   );
 };
